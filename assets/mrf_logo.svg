@@ -1,0 +1,17 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 588.142578125 273.4" width="588.142578125" height="273.4">
+  <!-- svg-source:excalidraw -->
+  
+  <defs>
+    <style class="style-fonts">
+      @font-face {
+        font-family: "Virgil";
+        src: url("https://excalidraw.com/Virgil.woff2");
+      }
+      @font-face {
+        font-family: "Cascadia";
+        src: url("https://excalidraw.com/Cascadia.woff2");
+      }
+    </style>
+    
+  </defs>
+  <g transform="translate(173 45.5) rotate(0 120.5604248046875 64.01022930412294)"><text x="0" y="0" font-family="Helvetica, Segoe UI Emoji" font-size="111.32213792021383px" fill="#f08c00" text-anchor="start" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">MRF</text></g><g stroke-linecap="round" transform="translate(125 10) rotate(0 164.5 93.5)"><path d="M0.24 1.29 C78.83 0.43, 159.27 1.45, 329.9 -0.78 M329.59 -1.85 C329.19 69.78, 329 141.63, 329.03 186.93 M327.7 187.98 C264.15 184.57, 197.93 184.49, 0.67 187.25 M-0.47 187.16 C-0.42 142.39, 2.25 97.07, 0.73 -1.04" stroke="#f08c00" stroke-width="4.5" fill="none" stroke-dasharray="8 12"></path></g><g transform="translate(10 222) rotate(0 284.0712890625 20.700000000000003)"><text x="284.0712890625" y="0" font-family="Helvetica, Segoe UI Emoji" font-size="36px" fill="#f08c00" text-anchor="middle" style="white-space: pre;" direction="ltr" dominant-baseline="text-before-edge">Microservice Reference Framework</text></g></svg>
