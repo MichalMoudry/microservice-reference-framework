@@ -6,7 +6,7 @@
 A main repository with the Microservice Reference Framework
 
 ## Framework structure
-1. Introduction
+1. [Introduction](./framework/introduction/ "Link to introduction")
 2. Motivation
 3. Guide
 4. Microservice architecture description
