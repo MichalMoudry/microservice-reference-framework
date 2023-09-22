@@ -1,4 +1,5 @@
 title: Microservice Reference Framework
-description: A repository with the Microservice Reference Framework
-remote_theme: just-the-docs
-markdown: GFM
+description: A repository with the Microservice Reference Framework.
+theme: just-the-docs
+
+url: https://just-the-docs.github.io
