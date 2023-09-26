@@ -1,15 +1,23 @@
+---
+layout: default
+title: Home
+nav_order: 1
+description: "A repository with the Microservice Reference Framework."
+permalink: /
+---
+
 <p align="center">
     <img src="./assets/mrf_logo.svg" alt="Microservice Reference Framework logo" />
 </p>
 
-# Microservice Reference Framework
+# Microservices Reference Framework
 A main repository with the Microservice Reference Framework
 
 ## Framework structure
 1. [Introduction](./framework/introduction/ "Link to introduction")
 2. [Motivation](./framework/motivation/ "Link to motivation")
 3. [Guide](./framework/guide "Link to a framework guide")
-4. Microservice architecture description
+4. [Microservice architecture description](./framework/architecture-description "Link to microservices architecture description")
 5. Characteristics of microservices
 6. Business cases
     - Business case 1
