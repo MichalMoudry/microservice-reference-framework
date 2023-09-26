@@ -1,20 +1,8 @@
-theme: jekyll-theme-cayman
-#remote_theme: pmarsceill/just-the-docs
-markdown: GFM
 title: Microservice Reference Framework
 description: A repository with the Microservice Reference Framework.
+theme: just-the-docs
 
-#Theme config
-#back_to_top: true
-#back_to_top_text: "Zpět nahoru"
+url: https://just-the-docs.github.io
 
-#last_edit_timestamp: true
-#last_edit_time_format: "%b %e %Y at %I:%M %p"
-
-#gh_edit_link: true
-#gh_edit_link_text: "Upravit stránku na GitHubu"
-#gh_edit_repository: "https://github.com/MichalMoudry/4IT575-seminarni-prace"
-#gh_edit_branch: "main"
-#gh_edit_view_mode: "tree"
-
-#color_scheme: "dark"
+aux_links:
+  Template Repository: https://github.com/just-the-docs/just-the-docs-template
