@@ -20,6 +20,8 @@ A main repository with the Microservice Reference Framework
     - Extending functionality of the system
     - Mapping of microservice characteristics
 8. Summary
+    - Advanced topics
+9. Used literature and sources
 
 ## Connected repositories
 This section contains a list of repositories that are connected to this main one.
@@ -27,3 +29,4 @@ This section contains a list of repositories that are connected to this main one
 - [Workflow service repository](https://github.com/MichalMoudry/mrf-workflow-service "Link to Workflow service's GitHub repository")
 - [Analytics service repository](https://github.com/MichalMoudry/mrf-analytics-service "Link to Analytics service's GitHub repository")
 - [User service repository](https://github.com/MichalMoudry/mrf-user-service "Link to User service's GitHub repository")
+- Notifications service repository

@@ -1,8 +1,50 @@
-title: Microservice Reference Framework
+title: MRF
 description: A repository with the Microservice Reference Framework.
 theme: just-the-docs
 
-url: https://just-the-docs.github.io
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - bin/
+  - lib/
+  - "*.gemspec"
+  - "*.gem"
+  - LICENSE.txt
+  - package.json
+  - package-lock.json
+  - Rakefile
+  - README.md
+  - CODE_OF_CONDUCT.md
+  - docker-compose.yml
+  - Dockerfile
 
-aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+mermaid:
+  version: "9.3.0"
+
+gh_edit_link: true
+gh_edit_link_text: "Edit this page on GitHub"
+gh_edit_branch: "main"
+gh_edit_repository: "https://github.com/MichalMoudry/microservices-reference-framework"
+
+url: https://michalmoudry.github.io
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  startings: []
+  blanklines: false
+  profile: false
