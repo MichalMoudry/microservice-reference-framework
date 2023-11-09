@@ -14,4 +14,4 @@ Reason for creating this framework was lacking participation of [] and bootcamps
 
 Goal of this framework is to provide a collection of artifacts to aid in education in software architecture domain. Specifically, targeting the popular architectural style of microservices.
 
-To properly start with this framework, visit [Guide](./guide.md) to learn about each part of this framework.
+To properly start with this framework, visit [Guide](./guide) to learn about each part of this framework.

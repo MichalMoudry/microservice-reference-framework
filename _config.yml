@@ -27,7 +27,7 @@ exclude:
   - Dockerfile
 
 marmaid:
-  version: "9.1.3"
+  version: "10.6.1"
 
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub"
@@ -35,6 +35,11 @@ gh_edit_branch: "main"
 gh_edit_repository: "https://github.com/MichalMoudry/microservices-reference-framework"
 
 url: https://michalmoudry.github.io
+
+kramdown:
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
 
 compress_html:
   clippings: all
