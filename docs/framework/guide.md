@@ -1,19 +1,5 @@
----
-layout: default
-title: Framework guide
-nav_order: 3
----
-
 # Framework guide
 This page contains a guide displaying relation ships between every framework's artifacts.
-
-{: .no_toc }
-
-## Table of contents
-{: .no_toc .text-delta }
-
-1. TOC
-{:toc}
 
 ---
 

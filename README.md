@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="./assets/mrf_logo.svg" alt="Microservice Reference Framework logo" />
+    <img src="./docs/_media/mrf_logo.svg" alt="Microservice Reference Framework logo" />
 </p>
 
 # Microservice Reference Framework

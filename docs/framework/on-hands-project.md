@@ -1,9 +1,3 @@
----
-layout: default
-title: On-hands project
-nav_order: 7
----
-
 # On-hands project
 
 ## Introduction to the project
