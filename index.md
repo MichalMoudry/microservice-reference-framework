@@ -13,24 +13,24 @@ permalink: /
 # Microservices Reference Framework
 A website containing the Microservice Reference Framework. This website/repository is the main repository that connects 5 other repositories.
 
-To get started with this framework, please visit [Introduction](./framework/introduction/ "Link to introduction") and [Guide](./framework/guide/ "Link to a framework guide") pages.
+To get started with this framework, please visit [Introduction](./framework/introduction "Link to introduction") and [Guide](./framework/guide/ "Link to a framework guide") pages.
 
 ## Framework structure/contents
-1. [Introduction](./framework/introduction/ "Link to introduction")
-2. [Motivation](./framework/motivation/ "Link to motivation")
-3. [Guide](./framework/guide/ "Link to a framework guide")
-4. [Microservice architecture description](./framework/architecture-description/ "Link to microservices architecture description")
+1. [Introduction](./framework/introduction "Link to introduction")
+2. [Motivation](./framework/motivation "Link to motivation")
+3. [Guide](./framework/guide "Link to a framework guide")
+4. [Microservice architecture description](./framework/architecture-description "Link to microservices architecture description")
     - Characteristics of microservices
-6. [Business cases](./framework/business-cases/)
+6. [Business cases](./framework/business-cases)
     - Business case 1
-7. [On-hands project](./framework/on-hands-project/)
+7. [On-hands project](./framework/on-hands-project)
     - Introduction to the project
     - Running the project
     - Extending functionality of the system
     - Mapping of microservice characteristics
-8. [Summary](./framework/summary/)
+8. [Summary](./framework/summary)
     - Advanced topics
-9. [Used literature and sources](./framework/sources/)
+9. [Used literature and sources](./framework/sources)
 
 ## Connected repositories
 This section contains a list of repositories that are connected to this main one.

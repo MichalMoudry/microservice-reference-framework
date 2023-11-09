@@ -27,7 +27,7 @@ exclude:
   - Dockerfile
 
 marmaid:
-  version: "10.6.0"
+  version: "9.1.3"
 
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub"
