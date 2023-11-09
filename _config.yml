@@ -26,8 +26,8 @@ exclude:
   - docker-compose.yml
   - Dockerfile
 
-marmaid:
-  version: "10.6.1"
+mermaid:
+  version: "9.3.0"
 
 gh_edit_link: true
 gh_edit_link_text: "Edit this page on GitHub"
