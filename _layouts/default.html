@@ -34,8 +34,13 @@ layout: table_wrappers
     {% endif %}
   </div>
 
-  {% if site.mermaid %}
-    {% include components/mermaid.html %}
-  {% endif %}
+  <script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10.6.1/dist/mermaid.min.js';
+    var config = {};
+    mermaid.initialize(config);
+    mermaid.run({
+      querySelector: '.language-mermaid',
+    });
+  </script>
 </body>
 </html>
