@@ -15,6 +15,9 @@ A website containing the Microservice Reference Framework. This website/reposito
 
 To get started with this framework, please visit [Introduction](./framework/introduction "Link to introduction") and [Guide](./framework/guide/ "Link to a framework guide") pages.
 
+## Other available languages
+- [Czech](./cs/framework)
+
 ## Framework structure/contents
 1. [Introduction](./framework/introduction "Link to introduction")
 2. [Motivation](./framework/motivation "Link to motivation")

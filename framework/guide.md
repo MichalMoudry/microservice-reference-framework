@@ -14,3 +14,6 @@ graph TD;
     B-->D;
     C-->D;
 ```
+
+- Microservice description
+    - Architecture characteristics
