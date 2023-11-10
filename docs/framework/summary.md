@@ -1,3 +1,3 @@
-# Summary
+# Souhrn
 
-## Advanced topics
+## Pokročilá témata

@@ -1,8 +1,10 @@
-# Microservices architecture description
+# Popis architektury mikroslužeb
 
-## Overview and description
+## Přehled a popis
 
-## Reference model
+## Referenční model mikroslužeb
+V této podkapitole je uveden referenční model architektury mikroslužeb. Tedy jde o obecný model komponent systému založených na dané architektuře.
+
 ![Microservice architecture reference model](../_images/reference_model.svg "Reference model of microservices")
 - Client Requests
 - API Layer

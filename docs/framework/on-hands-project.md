@@ -1,11 +1,9 @@
-# On-hands project
+# Praktický projekt
 
-## Introduction to the project
+## Úvod do projektu
 
-## Running the project
+## Spuštění projektu
 
-## Deploying the project
+## Nasazování projektu
 
-## Extending functionality of the system
-
-## Mapping of microservice characteristics
+## Rozšiřování funkcionality systému
