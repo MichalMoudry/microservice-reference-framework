@@ -2,7 +2,7 @@
 
 # Microservices Reference Framework <small>1.0</small>
 
-> A magical documentation site generator.
+> Referenční rámec pro architektonický styl mikroslužeb
 
 [GitHub](https://github.com/MichalMoudry/microservices-reference-framework)
 [Get Started](#microservices-reference-framework)
