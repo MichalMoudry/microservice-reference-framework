@@ -1,6 +1,5 @@
 * [Domovská stránka](/)
 * [Úvod](./framework/introduction.md)
-* [Motivace](./framework/motivation.md)
 * [Cíl Rámce](./framework/goals.md)
 * [Návod pro framework](./framework/guide.md)
 * [Popis architektury mikroslužeb](./framework/architecture-description.md)
