@@ -8,12 +8,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@4/lib/themes/vue.css">
   <link rel="stylesheet" href="./css/main.css">
-  <script src="./js/main.js" />
 </head>
 <body>
   <div id="app">
     Please wait...
   </div>
+  <script>
+    window.$docsify = {
+      name: 'Microservices Reference Framework',
+      repo: 'MichalMoudry/microservices-reference-framework',
+      loadSidebar: true,
+      subMaxLevel: 2,
+      coverpage: true,
+      alias: {
+          '/.*/_sidebar.md': '/_sidebar.md'
+      },
+      plugins: [
+          function (hook) {
+              hook.doneEach(function () {
+                  let mermaidConfig = {
+                      querySelector: ".mermaid",
+                  };
+                  mermaid.run(mermaidConfig);
+              });
+          },
+      ]
+    }
+  </script>
   <!-- Docsify v4 -->
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <script type="module">
