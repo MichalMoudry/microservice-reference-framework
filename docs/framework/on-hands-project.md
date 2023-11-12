@@ -7,11 +7,11 @@ organizacích, kdy došlo k přesunu z monolitické architektury na mikroslužby
 
 Co se týče funkcionality tohoto systému, tak jde o čtení obsahu na naskenovaných dokumentech a jejich archivace ve vhodném uložišti.
 ### Diagram tříd
-![Diagram tříd](../_images/class_diagram.svg "Diagram tříd")
+![Diagram tříd](../_images/class_diagram.svg)
 ### Diagram komponent
 ![Diagram komponent](../_images/component_diagram.svg)
 #### Detail instance služby
-![Detail instance služby](../_images/instance_deployment.svg "Detail instance služby")
+![Detail instance služby](../_images/instance_deployment.svg)
 - Každá instance služby se skládá z následujících částí:
     - Proces služby
     - daprd
