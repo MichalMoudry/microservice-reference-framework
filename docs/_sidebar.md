@@ -4,7 +4,7 @@
 * [Návod pro framework](./framework/guide.md)
 * [Popis architektury mikroslužeb](./framework/architecture-description.md)
 * [Charakteristiky mikroslužeb](./framework/microservices-characteristics.md)
-* [Business případy](./framework/business-cases/index.md)
+* [Business případy](./framework/business-cases.md)
 * [Praktický projekt](./framework/on-hands-project.md)
 * [Souhrn](./framework/summary.md)
 * [Použité zdroje a literatura](./framework/used-sources.md)
