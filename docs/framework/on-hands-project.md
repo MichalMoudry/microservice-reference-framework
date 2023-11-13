@@ -4,8 +4,18 @@
 ## Úvod do projektu
 Jde o reimplementaci systému pro podporu digitalizace dokumentů v
 organizacích, kdy došlo k přesunu z monolitické architektury na mikroslužby.
+Cílem této části je poskytnout praktickou ukázku (tzn. ukázka včetně zdrojového kódu) systému
+využívající mikroslužby, přičemž tato část má sloužit jako doplňek k [business případům](./framework/business-cases),
+které neodkazují na konkrétní zdrojový kód.
 
 Co se týče funkcionality tohoto systému, tak jde o čtení obsahu na naskenovaných dokumentech a jejich archivace ve vhodném uložišti.
+
+Odkaz na webovou aplikaci: [Digi - Vercel](https://mrf-web-app.vercel.app/)
+### Implementace specifik mikroslužeb
+#### Nezávislost služeb
+#### Automatizace infrastruktury
+#### Rozdělené systému na komponenty
+
 ### Diagram tříd
 ![Diagram tříd](../_images/class_diagram.svg)
 ### Diagram komponent

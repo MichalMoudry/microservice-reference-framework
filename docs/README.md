@@ -3,20 +3,17 @@ Tato stránka obsahuje referenční rámec pro architektonický styl mikrosluže
 
 ## Struktura Rámce
 1. [Úvod](./framework/introduction "Link to introduction")
-2. [Motivace](./framework/motivation "Link to motivation")
+    - Motivace
 3. [Návod pro framework](./framework/guide "Link to a framework guide")
 4. [Popis architektury mikroslužeb](./framework/architecture-description "Link to microservices architecture description")
+    - Referenční model mikroslužeb
 5. [Charakteristiky mikroslužeb](./framework/microservices-characteristics)
+    - Vzory aplikované u mikroslužeb
+    - Anti-vzory spojené s mikroslužbami
 6. [Business případy](./framework/business-cases)
-    - Business případ 1
 7. [Praktický projekt](./framework/on-hands-project)
-    - Úvod do projektu
-    - Spuštění projektu
-    - Rozšíření funkcionality systému
-8. Mapping of microservice characteristics
 9. [Souhrn](./framework/summary)
-    - Pokročilá témata
-10. [Použité zdroje a literatura](./framework/sources)
+10. [Použité zdroje a literatura](./framework/used-sources)
 
 ## Ostatní repositáře
 Tato sekce obsahuje seznam repositářů, které jsou spojené s támto Rámcem.

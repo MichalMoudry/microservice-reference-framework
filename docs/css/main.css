@@ -2,6 +2,8 @@ body {
     font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
 }
 
-.content p {
-    text-align: justify;
+@media screen and (min-width: 600px) {
+    .content p {
+        text-align: justify;
+    }
 }

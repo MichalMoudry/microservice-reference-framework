@@ -23,7 +23,7 @@ graph LR;
     summary-->sources;
 ```
 
-!> Samotný Rámec vyžaduje využití všech jeho artefaktů (včetně jejich vazeb). Lze tedy využít jen jeho části.
+!> Samotný Rámec nevyžaduje využití všech jeho artefaktů (včetně jejich vazeb). Lze tedy využít jen jeho části.
 
 Katalog diagramu:
 - **Popis architektury mikroslužeb** - Tato kapitola obsahuje high-level přehled, popis a referenční model architektury mikroslužeb.
