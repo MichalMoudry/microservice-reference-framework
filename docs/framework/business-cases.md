@@ -18,6 +18,9 @@ Další pozitivní aspekt mikroslužeb je i v rámci pochopení domény či syst
 Ve spojení s možností využití nových technologií a dekompozice systému na menší části vede ke spokojenějším a produktivnějším vývojářům na projektu.
 
 Příkladem využití nových technologií byla možnost využít různorodé systémy pro ukládání dat. Většinou používáme SQL datábaze, ale třeba také uložiště Azure Blob Storage nebo Azure Cognitive Search pro vyhledávání ve velkém množství dat.
+
+?> Zde lze vidět dopad nezávislosti služeb (viz [Charateristika nezávislosti](./microservices-characteristics.md)) v rámci této architektury.
+
 ### Nevýhody využití mikroslužeb
 
 ?> V softwarových architekturách nikdy nejsou jen přínosy, ale vše má své výhody a nevýhody. Je tedy třeba při analýze vhodně vybrat architekturu, jejíž přínosy jsou hodnotnější pro projekt, a s nevýhodami ten projekt může žít.
@@ -28,7 +31,12 @@ U mikroslužeb je třeba dbát na doménu služeb, přičemž by měla mít mal�
 
 Další problém je ve správě dat, kdy jednou ze zásad mikroslužeb je, že nesmí mezi sebou sdílet žádná data. Tedy pokud nějaká služba potřebuje data, tak je třeba jí ty data poslat. U posílání dat jsou dvě možnosti pro data dynamické a statičtější  povahy. Příkladem dynamických dat je u nás třeba nákup, který putuje celým systémem. U dynamických dat je třeba poslat všechny data, které služby potřebují. U statičtějších dat jde využít replikační mechanismus (např. přes service bus ), kdy služby si udržují svojí vlastní lokální kopii. Příkladem replikace statičtějších dat je u nás konfigurace partnerů, kdy jedna služba slouží jako zdroj pravdy, přičemž pokud dojde k aktualizaci konfigurace, tak tu změnu publikuje na service busu a všechny relevantní služby si tu aktualizaci převezmou, a aktualizují si svojí lokální kopii.
 
+?> Zde lze vidět možné dopady `decentralizované správy dat` (viz ) v systémech založených na mikroslužbách. Zde lze také pozorovat praktickou aplikaci `asynchronní komunikace` (viz ).
+
 U mikroslužeb je také velký problém implementovat transakci přes několik služeb, což velice komplexní záležitost, které se snažíme vyhýbat, protože pro to neexistuje ideální řešení. U distribuovaných systémů nelze dosáhnout všech ACID vlastností, což je velká výhoda u monolitických systémů. Byl zvažován Saga pattern, ale zase neexistuje ideální řešení a člověk vždycky něco musí obětovat. Dále u konzistence dat systém využívá eventuální konzistenci dat, např. u replikace konfigurace partnerů se ty služby eventuálně dostanou do stavu, kdy mají aktuální konfiguraci, ale nikdy to nebude ve stejný čas. Samozřejmě pro to existuje pattern (konkrétně outbox pattern), který s tím pomůže, ale to je práce navíc oproti monolitům.
+
+!> V této části je uvedena problematika transakcí v mikroslužbách.
+
 ### Zvažované alternativy architektury
 Namísto mikroslužeb byl uvažována tzv. vertical slice architektura, jejíž výhodou by byla minimalizace zásahů do částí systému, které by neměly změněny.
 ### Podpora ze strany zákazníka
@@ -43,7 +51,7 @@ Vzhledem k přesunu z on-premise
 - Gateway pattern
 ### Použité technologie
 - .NET + C#
-- Elm
+- Elm (pro některé frontend aplikace)
 - Azure Service Bus
 - Azure App Insights
 - Azure Blob Storage
