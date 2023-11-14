@@ -1,7 +1,7 @@
 # Úvod
 ---
 
-Vítejte u referenčního Rámce pro mikroslužby! Tento Rámec má za cíl poskytnou úvod, naučit a návod pro architektonický styl `mikroslužeb`. Tedy tento framework poskytuje artefakty, které by. Pro správný začátek s tímto Rámcem navštivte kapitolu [Návod](guide) pro získání přehledu o všech artefaktech tohoto Rámce.
+Vítejte u referenčního Rámce pro mikroslužby! Tento Rámec má za cíl poskytnou úvod, naučit a návod pro architektonický styl `mikroslužeb`. Tedy tento framework poskytuje artefakty, které by. Pro správný začátek s tímto Rámcem navštivte kapitolu [Návod](./framework/guide) pro získání přehledu o všech artefaktech tohoto Rámce.
 
 ## Motivace
 Velice důležitou částí vývoje <abbr title="software, softwarový, softwarové">SW</abbr> řešení je jejich architektura, která spočívá v principech, pravidlech a rozhodnutích s nimi spojených. Samozřejmě architektura není jen etapou fáze návrhu systému, ale může jít i o kontinuální proces v rámci celého životního cyklu SW systému. Mezi přínosy SW architektury například patří:
