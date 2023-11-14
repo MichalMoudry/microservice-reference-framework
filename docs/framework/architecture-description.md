@@ -16,8 +16,9 @@ V této podkapitole je uveden referenční model architektury mikroslužeb. Tedy
     - *Load balancer* - Jedná se o volitelný mechanismus pro řízení škálování a elasticity služby, kdy může existovat 1 až N služeb. Provoz bude vhodně posílán na instance/repliky, které mají volné vypočtení prostředky. Konkrétním příkladem toho nasazení je Kubernetes, kdy jednotlivé instance jsou tzv. pody a těm se dynamicky přiděluje provoz na základě jejich dostupnosti nebo vytížení.
     - *Service* (component) - Jde o konkrétní instanci služby.
         - Modul - Označuje in-process komponentu, resp. modul služby
-    - *Database* - Může označovat SŘBD, databázi nebo databázové schéma, přičemž záleží, jestli byly služby logicky nebo fyzicky odděleny.
+    - *Database* - Může označovat <abbr title="Systém řízení báze dat">SŘBD</abbr>, databázi nebo databázové schéma, přičemž záleží, jestli byly služby logicky nebo fyzicky odděleny.
 - **Message/Topic Queue** - Jde komponentu, která umožňuje realizovat asynchronní komunikaci mezi službami v systému.
-    - Populárním přístupem je zde využití tzv. pub-sub vzoru, kdy některé služby jsou v roli vydavatele (publisher) nebo odběratele (subscriber).
-    - Vydavatelé publikují události  s určitým tématem, přičemž na odběr daného tématu může být přihlášeno 0 až N odběratelů. Tedy pokud je služba přihlášena na odběr událostí specifického tématu, tak od MQ dostane na příslušný koncový bod data v případě, že byla nějaká událost publikována.
-    - Samozřejmě publikované události mohou být mohou být přijímány více odběrateli, přičemž většinou je garantováno jedno doručení zprávy (závisí, jak je MQ nakonfigurována).
+    - Populárním přístupem je zde využití tzv. pub-sub vzoru, kdy některé služby jsou v roli vydavatele (`publisher`) nebo odběratele (`subscriber`).
+    - Vydavatelé publikují události  s určitým tématem, přičemž na odběr daného tématu může být přihlášeno 0 až N odběratelů. Tedy pokud je služba přihlášena na odběr událostí specifického tématu, tak od <abbr title="Message Queue">MQ</abbr> dostane na příslušný koncový bod data v případě, že byla nějaká událost publikována.
+    - Samozřejmě publikované události mohou být mohou být přijímány více odběrateli, přičemž většinou je garantováno jedno doručení zprávy (závisí, jak je <abbr title="Message Queue">MQ</abbr> nakonfigurována).
+    - Příkladem této komponenty jsou tyto: Azure Service Bus, AWS Simple Queue Service

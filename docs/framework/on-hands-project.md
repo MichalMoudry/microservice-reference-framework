@@ -23,10 +23,10 @@ Odkaz na webovou aplikaci: [Digi - Vercel](https://mrf-web-app.vercel.app/)
 #### Detail instance služby
 ![Detail instance služby](../_images/instance_deployment.svg)
 - Každá instance služby se skládá z následujících částí:
-    - Proces služby
-    - daprd
-    - (Dobrovolné) Integrace se Service connector - Tato část je pouze releventní pro deployment na MS Azure, kdy Service connector slouží pro připojování Azure Container Apps ke cloudovým službám.
-        - Service connector přidává connection stringy do kontejnerů/replik, aby je mohly využít pro připojení.
+    - **Proces služby** - Jedná se o spuštěnou službu, která realizuje naprogramovanou logiku. Také může poskytovat rozhraní pro komunikaci (v tomto projektu jde o RESTové API pro komunikaci s API gateway nebo jinými klienty).
+    - **daprd** - Jde o službu realizující roli Dapr klienta pro službu. S touto službou, resp. Dapr klientem komunikuje hlavní služba pro realizaci některých činností
+    - (Dobrovolné) **Integrace se Service connector** - Tato část je pouze releventní pro deployment na MS Azure, kdy Service connector slouží pro připojování Azure Container Apps ke cloudovým službám.
+        - Service connector přidává connection stringy do kontejnerů/replik, aby je mohly využít pro připojení. Tyto textové řetězce jsou přidávány ve formě proměnných prostředí nasazených kontejnerů.
 ### Deployment diagram systému
 ![Diagram nasazení](../_images/deployment_diagram.svg)
 

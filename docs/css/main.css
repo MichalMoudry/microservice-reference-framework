@@ -1,5 +1,32 @@
+@font-face {
+    font-family: 'Mona Sans';
+    src:
+        url('./fonts/Mona-Sans.woff2') format('woff2 supports variations'),
+        url('./fonts/Mona-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+}
+
+@font-face {
+    font-family: 'Hubot Sans';
+    src:
+        url('./fonts/Hubot-Sans.woff2') format('woff2 supports variations'),
+        url('./fonts/Hubot-Sans.woff2') format('woff2-variations');
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+}
+
 body {
-    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+    font-family: 'Mona Sans';
+    /*font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;*/
+}
+
+h1, h2, h3, h4, strong, code {
+    font-family: 'Hubot Sans';
+}
+
+.content p, li {
+    font-size: 1.05rem;
 }
 
 @media screen and (min-width: 600px) {
