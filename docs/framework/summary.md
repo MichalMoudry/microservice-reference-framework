@@ -7,8 +7,21 @@ Zde je uvedena poslední část Rámce, která obsahuje spojení mezi charakteri
 ### Nezávislost služeb a nezávislé nasazování
 ### Automatizace infrastruktury
 ### Decentralizovaný governance a správa dat
-### Design orientovaný na odolnost a chyby
 ### Chytré koncové body s jednoduchými komunikačními kanály
+V rámci praktického projektu lze vidět tuto charkteristiku na příkladu se smazáním uživatele v systému, kdy jedna služba publikuje událost do systému obsahující ID smazaného uživatele. Samotná komunikace mezi službami je jednoduchá, přičemž jedna služba publikuje data do <abbr title="Message Queue">MQ</abbr> komponenty, následně se MQ pokusí odeslat daná data v určeném formátu (čistá/raw data nebo třeba v `cloudevents` formátu) službám, které jsou přihlášena na odběr události smazání uživatele. Ukázka `cloudevents` formátu lze vidět níže. Tedy webová služba dostane na svůj endpoint HTTP request, jehož tělo obsahuje publikovaná data (v tomto případě jde o ID smazaného uživatele).
+
+```json
+{
+    "specversion" : "1.0",
+    "type" : "user-delete",
+    "source" : "user-service",
+    "id" : "A234-1234-1234",
+    "time" : "2023-11-15T15:00:00Z",
+    "datacontenttype" : "text/plain",
+    "data" : "VGJDmp2VmuIt2HM9c1Qc1T7Li992"
+}
+```
+Ve výsledku komunikace mezi komponentami probíhá pomocí definovaného protokolu (např. HTTP) ve styli request-response a veškerá logika je řešena na straně služeb. Není tedy třeba využívat mechanismy nebo komponenty (např. <abbr title="Enterprise Service Bus">ESB</abbr>), které by řešily logiku do komunikační části.
 
 ## Pokročilá témata
 ### Saga pattern

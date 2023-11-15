@@ -4,7 +4,7 @@ Tato část obsahuje popisy produkčních systémů, které využívají archite
 
 ## Business případ 1
 ### Doména
-Systém obsahuje několik aplikací, ale hlavní je poskytování pluginu pro (<abbr title="business-to-business">b2b</abbr>) zákazníky pro zajištění kompletního checkout flow pro platby, tedy ve své podstatě jde o plugin poskytující platební bránu.
+Systém obsahuje několik aplikací, ale hlavní je poskytování pluginu pro (<abbr title="business-to-business">b2b</abbr>) zákazníky pro zajištění kompletní checkout flow pro platby, tedy ve své podstatě jde o plugin poskytující platební bránu.
 ### Důvod pro využití mikroslužeb
 Projekt byl původně jeden velký monolit.
 
@@ -32,7 +32,7 @@ U mikroslužeb je třeba dbát na doménu služeb, přičemž by měla mít mal�
 
 Další problém je ve správě dat, kdy jednou ze zásad mikroslužeb je, že nesmí mezi sebou sdílet žádná data. Tedy pokud nějaká služba potřebuje data, tak je třeba jí ty data poslat. U posílání dat jsou dvě možnosti pro data dynamické a statičtější  povahy. Příkladem dynamických dat je u nás třeba nákup, který putuje celým systémem. U dynamických dat je třeba poslat všechny data, které služby potřebují. U statičtějších dat jde využít replikační mechanismus (např. přes service bus ), kdy služby si udržují svojí vlastní lokální kopii. Příkladem replikace statičtějších dat je u nás konfigurace partnerů, kdy jedna služba slouží jako zdroj pravdy, přičemž pokud dojde k aktualizaci konfigurace, tak tu změnu publikuje na service busu a všechny relevantní služby si tu aktualizaci převezmou, a aktualizují si svojí lokální kopii.
 
-> Zde lze vidět možné dopady `decentralizované správy dat` (viz [Decentralizovaný governance a správa dat](./framework/microservices-characteristics?id=decentralizovaný-governance-a-správa-dat)) v systémech založených na mikroslužbách. Zde lze také pozorovat praktickou aplikaci `asynchronní komunikace` (viz [Nezávislost služeb a jejich nasazování](./framework/microservices-characteristics?id=nezávislost-služeb-a-jejich-nasazování)).
+> Zde lze vidět možné dopady _decentralizované správy dat_ (viz [Decentralizovaný governance a správa dat](./framework/microservices-characteristics?id=decentralizovaný-governance-a-správa-dat)) v systémech založených na mikroslužbách. Zde lze také pozorovat praktickou aplikaci _asynchronní komunikace_ (viz [Nezávislost služeb a jejich nasazování](./framework/microservices-characteristics?id=nezávislost-služeb-a-jejich-nasazování)).
 
 U mikroslužeb je také velký problém implementovat transakci přes několik služeb, což velice komplexní záležitost, které se snažíme vyhýbat, protože pro to neexistuje ideální řešení. U distribuovaných systémů nelze dosáhnout všech ACID vlastností, což je velká výhoda u monolitických systémů. Byl zvažován Saga pattern, ale zase neexistuje ideální řešení a člověk vždycky něco musí obětovat. Dále u konzistence dat systém využívá eventuální konzistenci dat, např. u replikace konfigurace partnerů se ty služby eventuálně dostanou do stavu, kdy mají aktuální konfiguraci, ale nikdy to nebude ve stejný čas. Samozřejmě pro to existuje pattern (konkrétně outbox pattern), který s tím pomůže, ale to je práce navíc oproti monolitům.
 

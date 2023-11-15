@@ -1,13 +1,4 @@
 @font-face {
-    font-family: 'Mona Sans';
-    src:
-        url('./fonts/Mona-Sans.woff2') format('woff2 supports variations'),
-        url('./fonts/Mona-Sans.woff2') format('woff2-variations');
-    font-weight: 200 900;
-    font-stretch: 75% 125%;
-}
-
-@font-face {
     font-family: 'Hubot Sans';
     src:
         url('./fonts/Hubot-Sans.woff2') format('woff2 supports variations'),
@@ -16,20 +7,12 @@
     font-stretch: 75% 125%;
 }
 
-.font-sans {
-    /*font-family: 'Roboto', sans-serif;*/
-    font-family: Inter var,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+.font-serif {
+    font-family: Lora, serif;
+    line-height: 1.6;
 }
 
-.font-mono {
-    font-family: ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
-}
-
-.font-mona {
-    font-family: 'Mona Sans';
-}
-
-h1, h2, h3, h4, strong, code {
+h1, h2, h3, h4, strong, code, .sidebar-nav, p > a {
     font-family: 'Hubot Sans';
 }
 
