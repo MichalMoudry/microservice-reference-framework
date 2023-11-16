@@ -30,7 +30,7 @@ Jedna z hlavních nevýhod je spojena s komunikací přes síť. U monolitů kom
 
 U mikroslužeb je třeba dbát na doménu služeb, přičemž by měla mít malé rozhraní a minimálně komunikovat s okolím. Příkladem je třeba, že pokud nějaká uživatelská akce nebo externí API volání projede přes 15 mikroslužeb, tak je v návrhu něco špatně. Tedy služby by měly mít jasně definové a co nejvíce stabilní rozhraní, aby nedocházelo k častým změnám kontraktů, což vyžaduje větší množství koordinace při nasazování služeb.
 
-Další problém je ve správě dat, kdy jednou ze zásad mikroslužeb je, že nesmí mezi sebou sdílet žádná data. Tedy pokud nějaká služba potřebuje data, tak je třeba jí ty data poslat. U posílání dat jsou dvě možnosti pro data dynamické a statičtější  povahy. Příkladem dynamických dat je u nás třeba nákup, který putuje celým systémem. U dynamických dat je třeba poslat všechny data, které služby potřebují. U statičtějších dat jde využít replikační mechanismus (např. přes service bus ), kdy služby si udržují svojí vlastní lokální kopii. Příkladem replikace statičtějších dat je u nás konfigurace partnerů, kdy jedna služba slouží jako zdroj pravdy, přičemž pokud dojde k aktualizaci konfigurace, tak tu změnu publikuje na service busu a všechny relevantní služby si tu aktualizaci převezmou, a aktualizují si svojí lokální kopii.
+Další problém je ve správě dat, kdy jednou ze zásad mikroslužeb je, že nesmí mezi sebou sdílet žádná data. Tedy pokud nějaká služba potřebuje data, tak je třeba jí ty data poslat. U posílání dat jsou dvě možnosti pro data dynamické a statičtější  povahy. Příkladem dynamických dat je u nás třeba nákup, který putuje celým systémem. U dynamických dat je třeba poslat všechny data, které služby potřebují. U statičtějších dat jde využít replikační mechanismus (např. přes service bus), kdy služby si udržují svojí vlastní lokální kopii. Příkladem replikace statičtějších dat je u nás konfigurace partnerů, kdy jedna služba slouží jako zdroj pravdy, přičemž pokud dojde k aktualizaci konfigurace, tak tu změnu publikuje na service busu a všechny relevantní služby si tu aktualizaci převezmou, a aktualizují si svojí lokální kopii.
 
 > Zde lze vidět možné dopady _decentralizované správy dat_ (viz [Decentralizovaný governance a správa dat](./framework/microservices-characteristics?id=decentralizovaný-governance-a-správa-dat)) v systémech založených na mikroslužbách. Zde lze také pozorovat praktickou aplikaci _asynchronní komunikace_ (viz [Nezávislost služeb a jejich nasazování](./framework/microservices-characteristics?id=nezávislost-služeb-a-jejich-nasazování)).
 
@@ -50,13 +50,17 @@ přičemž ta lze také dobře optimalizovat z pohledu nákladů a provozních p
 ### Vzory aplikované během vývoje
 - Outbox pattern
 - Integration event pattern
-- Pub-sub pattern
+- [Pub-sub pattern](/framework/microservices-characteristics?id=pub-sub)
 - Retry a circut-breaker pattern
-- Gateway pattern
+- [Gateway pattern](/framework/microservices-characteristics?id=gateway-pattern)
+
 ### Použité technologie
 - .NET + C#
 - Elm (pro některé frontend aplikace)
+- Kubernetes
 - Azure Service Bus
 - Azure App Insights
 - Azure Blob Storage
 - Azure AD
+
+> Využití platformy Kubernetes by šlo zařadit pod charakteristiku automatizace infrastruktury, protože umožňuje automatizované nasazování a škálování služeb.

@@ -241,6 +241,9 @@ jobs:
                 --dapr-app-protocol http \
                 --dapr-app-port 80
 ```
+V této definici si může všimnout, že krok `Deploy Container App` využívá <abbr title="Infrastructure as a Code">IaC</abbr> definici (v YAML formátu) pro vytvoření nové repliky/instance v rámci Azure Container Apps. Jednoduchá ukázka této definice už byla uvedena v části [Charakteristiky mikroslužeb](/framework/microservices-characteristics?id=ukázka-automatizace), ovšem Azure Container Apps umožňují vytvářet komplexnější repliky pro pokrytí komplexnějších scénářů nasazení. Ukázka kom
+
+Celý standard? pro 
 
 #### Rozdělené systému na komponenty
 V rámci projektu byly naimplementováno celkem 5 služeb, přičemž bylo použity celkem čtyři programovací jazyky (viz tabulka níže).

@@ -7,6 +7,7 @@ Mezi nejdůležitější nebo základní vybrané charakteristiky architektury m
 - decentralizovaný governance a správa dat,
 - design orientovaný na odolnost a chyby a
 - chytré koncové body s jednoduchými komunikačními kanály.
+
 ### Rozdělení systému na komponenty za pomoci služeb
 Označuje rozdělení systému na nezávislé a nezávisle nasazené procesy. Tedy oproti monolitické architektuře, kde rozdělení by spočívalo ve využívání knihoven, a jakákoliv změna znamená nutnost nasadit celou aplikaci. Na rozdíl u mikroslužeb stačí nasadit pouze službu, kde došlo k příslušným změnám. Samozřejmě v případě změny v rámci kontraktů (např. změna v požadovaných polích těla HTTP dotazů ), resp. rozhraní je třeba dodatečná koordinace mezi týmy/vlastníky služeb. Mimo nezávislé nasazení služeb/komponent systému je i výhodou efektivnější adaptace na změny v rámci businessu, který SW systém podporuje.
 ### Organizace okolo business domén
@@ -20,7 +21,7 @@ Na tomto obrázku lze vidět celkem tři služby a MQ komponentu, přičemž už
 ### Automatizace infrastruktury
 Zde pojem automatizace označuje aplikaci CD, což je jedna z praktik v rámci DevOps. Klíčovými prvky CD je automatizované testování (evaluace kvality přírůstků SW systému) a nasazování. Samozřejmě automatizace infrastruktury není unikátní pro architekturu mikroslužeb, ale u mikroslužeb jsou rozdílné aspekty v rámci provozu systému (distribuované trasování, monitorování nebo agregace logů).
 #### Ukázka automatizace
-Zde je uveden příklad YAML definice služby v rámci Azure Container Apps, kdy na základě této definice se v procesu CI/CD vytvářejí nové instance služby.
+Zde je uveden příklad YAML definice služby v rámci Azure Container Apps, kdy na základě této definice se v procesu CI/CD vytvářejí nové instance služby, resp. specifická akce tuto definici využívá jako podklad pro nové repliky. Co se týče detailů, tak zde lze vidět specifikaci přístupu (ingress) k službě z okolí a určení Docker obrazu, podle kterého se spustí služba v rámci repliky Azure Container Apps službě.
 ```yaml
 name: workflow-service
 type: Microsoft.App/containerApps
@@ -67,4 +68,4 @@ Saga je vzor, resp. algoritmus, jehož účel je řešit problémy spojené s ro
 ### Přímé závislosti mezi službami
 V této situaci jednotlivé služby volají ostatní služby přímo, tedy je využit synchronní způsob komunikace. Tento přístup nemusí být okamžitě považována za anti-pattern, ale jde důležité dbát na velikost tzv. API chain. API chain je pojem spojený s řetězením HTTP dotazů, kdy jeden dotaz od klient vede k více HTTP dotazům mezi různými službami. Zde je tedy potřeba dbát na počet dotazů, resp. počet služeb které jsou součástí jednoho HTTP cyklu, protože zde může dojít ke špatnému výkonu systému. Důvod pro špatný výkon je ten, že původní dotaz je vyřešen, až poté co jsou vyřešeny všechny interní dotazy. Další problém v API řetězu je těsné spojení mezi službami , kdy v případě, že spadne jakákoliv služba v sekvenci, tak spadne celý řetěz.
 ### Přímé sdílení dat mezi službami
-Jednou z charakteristik mikroslužeb je decentralizovaný governance a správa dat, což porušeno v případě, že databáze (resp. databázová schémata) nejsou logiky nebo fyzicky od sebe oddělena. Absence oddělení znamená, že existují některé služby jsou mezi sebou těsně spojené, přičemž cílem je minimalizovat spojení a maximalizovat kohezi služeb. Tento anti-pattern odebírá možnost týmům aplikovat tzv. polyglot persistenci , kdy týmy mohou využívat různé technologie pro ukládání dat, jež jim pomohou řešit, resp. podporovat požadovanou business funkcionalitu (např. lze kombinovat v systému SQL, NoSQL databáze nebo uložiště optimalizované pro tzv. BLOBy).
+Jednou z charakteristik mikroslužeb je decentralizovaný governance a správa dat, což porušeno v případě, že databáze (resp. databázová schémata) nejsou logiky nebo fyzicky od sebe oddělena. Absence oddělení znamená, že existují některé služby jsou mezi sebou těsně spojené, přičemž cílem je minimalizovat spojení a maximalizovat kohezi služeb. Tento anti-pattern odebírá možnost týmům aplikovat tzv. polyglot persistenci , kdy týmy mohou využívat různé technologie pro ukládání dat, jež jim pomohou řešit, resp. podporovat požadovanou business funkcionalitu (např. lze kombinovat v systému SQL, NoSQL databáze nebo uložiště optimalizované pro tzv. <abbr title="Binary Large Objects">BLOBy</abbr>).

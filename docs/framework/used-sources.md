@@ -1,4 +1,4 @@
-# Used sources and literature
+# Použité zdroje a literatura
 ---
 1. RICHARDS, Mark a Neal FORD, 2020. Fundamentals of software architecture: an engineering approach. First edition. Sebastopol, CA: O’Reilly Media, Inc. ISBN 978-1-4920-4345-4.
 

@@ -6,7 +6,11 @@ Zde je uvedena poslední část Rámce, která obsahuje spojení mezi charakteri
 ### Rozdělení systému na komponenty za pomoci služeb
 ### Nezávislost služeb a nezávislé nasazování
 ### Automatizace infrastruktury
+Automatizace infrastruktury může mít několik podob, a to třeba automatizace nasazení, škálování nebo správa služeb. Tedy lze nasadit různé přístupy (např. praktika DevOps) a prostředky (Kubernetes, GitHub Action, Azure DevOps Pipelines) pro dosažení efektivní automatizace softwarových řešení.
+
+Co se týče konkrétních ukázek automatizace, tak v uvedeném [business příkladě 1](/framework/business-cases?id=business-případ-1) lze vidět, že vývojářský tým využil technologii Kubernetes pro automatizaci nasazení a škálování služeb. Další praktická ukázka je uvedena v [podkapitole části Praktický projekt](/framework/on-hands-project?id=automatizace-infrastruktury), kde je popsán proces nasazení a jeho implementace pro jednu službu v demonstračním projektu. V ukázkovém procesu lze vidět definici potřebných činností (nahrání Docker obrazu do registráře, migrace databázového schématu aj.) pro nasazení jedné služby.
 ### Decentralizovaný governance a správa dat
+
 ### Chytré koncové body s jednoduchými komunikačními kanály
 V rámci praktického projektu lze vidět tuto charkteristiku na příkladu se smazáním uživatele v systému, kdy jedna služba publikuje událost do systému obsahující ID smazaného uživatele. Samotná komunikace mezi službami je jednoduchá, přičemž jedna služba publikuje data do <abbr title="Message Queue">MQ</abbr> komponenty, následně se MQ pokusí odeslat daná data v určeném formátu (čistá/raw data nebo třeba v `cloudevents` formátu) službám, které jsou přihlášena na odběr události smazání uživatele. Ukázka `cloudevents` formátu lze vidět níže. Tedy webová služba dostane na svůj endpoint HTTP request, jehož tělo obsahuje publikovaná data (v tomto případě jde o ID smazaného uživatele).
 
