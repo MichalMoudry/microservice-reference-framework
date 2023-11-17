@@ -12,7 +12,11 @@ main {
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, strong, code, .sidebar-nav, p > a {
+h1, h2, h3, h4, strong, code, .sidebar-nav {
+    font-family: 'Hubot Sans';
+}
+
+blockquote p, .tip {
     font-family: 'Hubot Sans';
 }
 

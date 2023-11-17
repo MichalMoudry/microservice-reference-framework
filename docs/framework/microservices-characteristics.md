@@ -9,7 +9,7 @@ Mezi nejdůležitější nebo základní vybrané charakteristiky architektury m
 - chytré koncové body s jednoduchými komunikačními kanály.
 
 ### Rozdělení systému na komponenty za pomoci služeb
-Označuje rozdělení systému na nezávislé a nezávisle nasazené procesy. Tedy oproti monolitické architektuře, kde rozdělení by spočívalo ve využívání knihoven, a jakákoliv změna znamená nutnost nasadit celou aplikaci. Na rozdíl u mikroslužeb stačí nasadit pouze službu, kde došlo k příslušným změnám. Samozřejmě v případě změny v rámci kontraktů (např. změna v požadovaných polích těla HTTP dotazů ), resp. rozhraní je třeba dodatečná koordinace mezi týmy/vlastníky služeb. Mimo nezávislé nasazení služeb/komponent systému je i výhodou efektivnější adaptace na změny v rámci businessu, který SW systém podporuje.
+Označuje rozdělení systému na nezávislé a nezávisle nasazené procesy. Tedy oproti monolitické architektuře, kde rozdělení by spočívalo ve využívání knihoven (nebo modulů) a jakákoliv změna znamená nutnost nasadit celou aplikaci. Na rozdíl u mikroslužeb stačí nasadit pouze službu, kde došlo k příslušným změnám. Samozřejmě v případě změny v rámci kontraktů (např. změna v požadovaných polích těla HTTP dotazů ), resp. rozhraní je třeba dodatečná koordinace mezi týmy/vlastníky služeb. Mimo nezávislé nasazení služeb/komponent systému je i výhodou efektivnější adaptace na změny v rámci businessu, který SW systém podporuje.
 ### Organizace okolo business domén
 Je atribut mikroslužeb, jež spočívá v organizaci jednotlivých služeb podle poskytovaných business funkcí. Tedy týmy odpovědné za celý systém jsou rozděleny do tzv. cross–funkčních týmů, které mají na starost všechny aspekty (uživatelské rozhraní, backend a persistence dat) služby nebo služeb, které jim byly přiřazeny.
 ### Nezávislost služeb a jejich nasazování
@@ -42,6 +42,16 @@ properties:
 Tato ukázka je spojena s kapitolou obsahující praktický projekt, přičemž tato definice slouží pro nasazování nových verzí [služby pro workflows](https://github.com/MichalMoudry/mrf-workflow-service).
 ### Decentralizovaný governance a správa dat
 Tato charakteristika je spojena s charakteristikou nezávislosti, kdy každá služba vlastní svoje data a s nikým jiným je nesdílí. Tedy v rámci mikroslužeb budou decentralizovány rozhodnutí ohledně zvolených technologiích pro uložiště a návrhu datového modelu. Výhodou je zde zvolení technologií pro ukládání dat, které se nejlépe hodí pro konkrétní účely služeb.
+
+U separace dat lze aplikovat logické nebo fyzické oddělení, přičemž tyto typy jsou využívány pro dosažení jiných cílů, resp. vlastností systému.
+- V případě logické separace jde o sdílení jednoho <abbr title="Systém řízení báze dat">SŘBD</abbr> pro několik služeb, ale služby využívají jejich databázové schéma.
+  - Jedná se o jednodušší způsob pro schovávání nebo sdílení informací.
+- Fyzická separace je spočívá ve využívání jednoho uložiště/SŘBD pro jednu službu.
+  - Toto oddělení potenciálně zlepší odolnost systému.
+  - Umožňuje tzv. polyglot persistenci dat, tzn. využití jiných technologií pro ukládání dat (např. uložiště pro <abbr title="Binary Large Object">BLOB</abbr> položky).
+
+> Praktický příklad polyglot persistence je diskutován v [business příkladě 1](/framework/business-cases?id=business-případ-1).
+
 ### Design orientovaný na odolnost a chyby
 Design orientovaný na odolnost a chyby je atribut spojený s nezávislými nasazováním služeb a orchestrací daných služeb. Rozdělení systému na nezávisle nasaditelné služby poskytuje nové příležitosti v oblasti škálování a elasticitě služeb, kdy důležité a často dotazované služby lze více podporovat (např. vertikální nebo horizontální škálování) než části systému na, než nejde velké množství provozu. Orchestrace služeb a koordinace událostí může vést k neočekávanému, resp. novému chování, proto je u mikroslužeb důležité dosáhnout vysoké úrovně transparentnosti (skrze monitoring nebo trasování). Využití technologií pro dosažení.
 ### Chytré koncové body s jednoduchými komunikačními kanály
@@ -49,7 +59,7 @@ Chytré koncové body s jednoduchými komunikačními kanály je charakteristika
 
 ## Vzory využívané v rámci mikroslužeb
 ### Pub-sub
-Tento vzor se týká asynchronní komunikace mezi službami, kdy tvůrce (tzv. publisher) publikuje do MQ zprávu s určitým tématem. Na dané téma může být přihlášeno 0 až N služeb (tzv. odběratelé). MQ komponenta při publikování zprávy se ji pokusí rozeslat na všechny relevantní odběratelské služby. Samozřejmě není zde 100% garance, že všechny služby danou zprávu zpracují okamžitě na první pokus nebo vůbec, proto je v těchto systémech aplikovat další vzory pro posílení jejich stability a odolnosti (např. dead letter queue nebo circut breaker vzor). Dead letter queue je vzor založený na frontě zpráv, resp. událostí, které služba nebyla schopna z jakéhokoliv důvodu zpracovat (např. transitivní problémy nebo chyby ve službě). Circut breaker vzor je spojen s určitým počtem opakování operací, přičemž circut breaker není o opakování operací, ale o zamezování operací, u kterých je očekávané, že skončí chybou.
+Tento vzor se týká asynchronní komunikace mezi službami, kdy tvůrce (tzv. **publisher**) publikuje do MQ zprávu s určitým tématem. Na dané téma může být přihlášeno 0 až N služeb (tzv. **odběratelé/subscribers**). MQ komponenta při publikování zprávy se ji pokusí rozeslat na všechny relevantní odběratelské služby. Samozřejmě není zde 100% garance, že všechny služby danou zprávu zpracují okamžitě na první pokus nebo vůbec, proto je v těchto systémech aplikovat další vzory pro posílení jejich stability a odolnosti (např. dead letter queue nebo circut breaker vzor). Dead letter queue je vzor založený na frontě zpráv, resp. událostí, které služba nebyla schopna z jakéhokoliv důvodu zpracovat (např. transitivní problémy nebo chyby ve službě). Circut breaker vzor je spojen s určitým počtem opakování operací, přičemž circut breaker není o opakování operací, ale o zamezování operací, u kterých je očekávané, že skončí chybou.
 ### CQRS
 Vzor **CQRS** (Command Query Responsibility Segregation) pro rozdělení dotazů na systém do kategorií dotazů a příkazů. Tento vzor je populární i mimo mikroslužby, ale v jejich kontextu se používá ve spojení s tzv. Event Sourcing  vzorem. Jednou z výhod tohoto vzoru je rozdělení uložišť pro ukládání a získávání dat. Tedy příkazy pro systém jsou zaznamenány jako události v tzv. Event Store a dotazy jsou řešeny specializovaným uložištěm, které je spojeno s uložištěm událostí.
 ### Gateway pattern
