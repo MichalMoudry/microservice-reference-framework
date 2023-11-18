@@ -10,6 +10,16 @@ Výhodou tohoto rozdělení mimo dekompozice systému na menší celky je také 
 
 > Další aspekty (např. zvýšení spokojenosti a produktivity vývojářů) rozdělení systému byly diskutovány v [business případu č. 1](/framework/business-cases?id=business-případ-1).
 #### Nezávislost služeb a nezávislé nasazování
+Jak bylo zmíněno, tak jednotlivé služby jsou vymezené do oddělených celků (out-of-process komponenty), přičemž jejich oddělení umožňuje nasazovat služby nezávisle na ostatních (jen v případě změn v kontraktech je třeba dodatečná koordinace). Výhodou nezávislých služeb a jejich nasazování je větší rychlost a flexibilita v implementaci nových funkcí. Tyto atributy byly mezi hlavními důvody, proč v rámci [business případu 1](/framework/business-cases?id=business-případ-1) došlo k přesunu z monolitické architektury na mikroslužby.
+
+> Nezávislé nasazení služeb lze vidět na [praktickém projektu](/framework/on-hands-project), kdy lze nasadit jednotlivé služby bez ohledu na stav ostatních služeb.
+
+Nezávislost služeb má dopad na komunikaci mezi jednotlivými komponentami. Zde lze využít synchronní nebo asynchronní způsob komunikace.
+- Synchronní komunikace - způsob komunikace, kdy služba volá druhou službu přímo a tvoří API chain.
+- Asynchronní komunikace - způsob komunikace, kdy pro komunikaci mezi 1 až _N_ službami je využita fronta pro posílání zpráv (tzn. služby nikdy nekomunikují spoluj přímo). Příklad této komunikace lze vidět zde:
+    - Business případ 1
+    - Praktický projekt
+
 ### Automatizace infrastruktury
 Automatizace infrastruktury může mít několik podob, a to třeba automatizace nasazení, škálování nebo správa služeb. Tedy lze nasadit různé přístupy (např. praktika DevOps) a prostředky (Kubernetes, GitHub Action, Azure DevOps Pipelines) pro dosažení efektivní automatizace softwarových řešení.
 
@@ -28,14 +38,14 @@ V rámci praktického projektu lze vidět tuto charkteristiku na příkladu se s
     "source": "user-service",
     "specversion": "1.0",
     "time": "2023-11-16T12:49:53Z",
-    "topic": "new-workflow",
+    "topic": "user-delete",
     "traceid": "00-f9a224367f5cd4694210021220bc9a68-c74f791fd741165b-01",
     "traceparent": "00-f9a224367f5cd4694210021220bc9a68-c74f791fd741165b-01",
     "tracestate": "",
     "type": "com.dapr.event.sent"
 }
 ```
-Ve výsledku komunikace mezi komponentami probíhá pomocí definovaného protokolu (např. HTTP) ve styli request-response a veškerá logika je řešena na straně služeb. Není tedy třeba využívat mechanismy nebo komponenty (např. <abbr title="Enterprise Service Bus">ESB</abbr>), které by řešily logiku do komunikační části.
+Ve výsledku komunikace mezi komponentami probíhá pomocí definovaného protokolu (např. HTTP) ve styli request-response a veškerá logika je řešena na straně služeb. Není tedy třeba využívat mechanismy nebo komponenty (např. <abbr title="Enterprise Service Bus">ESB</abbr>), které by řešily logiku v rámci komunikační části systému.
 
 ## Pokročilá témata
 ### Saga pattern
