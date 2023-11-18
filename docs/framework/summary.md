@@ -15,10 +15,10 @@ Jak bylo zmíněno, tak jednotlivé služby jsou vymezené do oddělených celk�
 > Nezávislé nasazení služeb lze vidět na [praktickém projektu](/framework/on-hands-project), kdy lze nasadit jednotlivé služby bez ohledu na stav ostatních služeb.
 
 Nezávislost služeb má dopad na komunikaci mezi jednotlivými komponentami. Zde lze využít synchronní nebo asynchronní způsob komunikace.
-- Synchronní komunikace - způsob komunikace, kdy služba volá druhou službu přímo a tvoří API chain.
-- Asynchronní komunikace - způsob komunikace, kdy pro komunikaci mezi 1 až _N_ službami je využita fronta pro posílání zpráv (tzn. služby nikdy nekomunikují spoluj přímo). Příklad této komunikace lze vidět zde:
-    - Business případ 1
-    - Praktický projekt
+- **Synchronní komunikace** - způsob komunikace, kdy služba volá druhou službu přímo a tvoří API chain. Zde je třeba dbát na velikost API řetězu pro zajištění vhodné spolehlivosti systému.
+- **Asynchronní komunikace** - způsob komunikace, kdy pro komunikaci mezi 1 až _N_ službami je využita fronta pro posílání zpráv (tzn. služby nikdy nekomunikují spoluj přímo). Příklad této komunikace lze vidět zde:
+    - Business případ 1 - Využití Integration event vzoru pro propagaci nastavení partnerů v systému.
+    - Praktický projekt - Publikování události o smazání uživatele v systému (tento případ je blíže popsán níže, viz [Chytré koncové body s jednoduchými komunikačními kanály](/framework/summary?id=chytré-koncové-body-s-jednoduchými-komunikačními-kanály)).
 
 ### Automatizace infrastruktury
 Automatizace infrastruktury může mít několik podob, a to třeba automatizace nasazení, škálování nebo správa služeb. Tedy lze nasadit různé přístupy (např. praktika DevOps) a prostředky (Kubernetes, GitHub Action, Azure DevOps Pipelines) pro dosažení efektivní automatizace softwarových řešení.
