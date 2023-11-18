@@ -5,7 +5,7 @@
 > Referenční rámec pro architektonický styl mikroslužeb
 
 [GitHub](https://github.com/MichalMoudry/microservices-reference-framework)
-[Get Started](#microservices-reference-framework)
+[Zobrazit](#microservices-reference-framework)
 
 <!-- background color -->
 <!--![color](#f0f0f0)-->

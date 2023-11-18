@@ -10,7 +10,7 @@ které neodkazují na konkrétní zdrojový kód.
 
 Co se týče funkcionality tohoto systému, tak jde o čtení obsahu na naskenovaných dokumentech a jejich archivace ve vhodném uložišti.
 
-Odkaz na webovou aplikaci: [Digi - Vercel](https://mrf-web-app.vercel.app/)
+Odkaz na webovou aplikaci: [Digi](https://mrf-web-app.vercel.app/)
 ### Implementace specifik mikroslužeb
 #### Nezávislost služeb
 Nezávislost služeb lze dosáhnout několika způsoby, kdy jedním z nich je využití asynchronní komunikace přes <abbr title="Message Queue">MQ</abbr> komponentu (třeba i za využití pub-sub patternu). Co se týče praktické ukázky této komunikace, tak ten je následující:
@@ -241,11 +241,39 @@ jobs:
                 --dapr-app-protocol http \
                 --dapr-app-port 80
 ```
-V této definici si může všimnout, že krok `Deploy Container App` využívá <abbr title="Infrastructure as a Code">IaC</abbr> definici (v YAML formátu) pro vytvoření nové repliky/instance v rámci Azure Container Apps. Jednoduchá ukázka této definice už byla uvedena v části [Charakteristiky mikroslužeb](/framework/microservices-characteristics?id=ukázka-automatizace), ovšem Azure Container Apps umožňují vytvářet komplexnější repliky pro pokrytí komplexnějších scénářů nasazení. Ukázka kom
+V této definici si může všimnout, že krok `Deploy Container App` využívá <abbr title="Infrastructure as a Code">IaC</abbr> definici (v YAML formátu) pro vytvoření nové repliky/instance v rámci Azure Container Apps. Jednoduchá ukázka této definice už byla uvedena v části [Charakteristiky mikroslužeb](/framework/microservices-characteristics?id=ukázka-automatizace), ovšem Azure Container Apps umožňují vytvářet komplexnější repliky pro pokrytí komplexnějších scénářů nasazení.
 
-Celý standard? pro 
+Komplexnější nastavení služby lze vidět u služby pro rozpoznávání dokumentů, kdy bylo třeba nastavit minimální konfiguraci výpočetního výkonu instancí (konkrétně 1 jádro <abbr title="Virtual Central Processing Unit">vCPU</abbr> a 2 GiB operační paměti) pro rychlejší zpracování dokumentů. Dále replika této služby je doplněna o sidecar službu pro asynchronní ukládání zpracovaných dokumentů do Azure Blob Storage. YAML definice této služby je uvedena níže.
+```yaml
+name: recognition-service
+type: Microsoft.App/containerApps
+tags:
+  system: mrf
+properties:
+  environmentId: /subscriptions/[subscription_id]/resourceGroups/microservice-reference-framework/providers/Microsoft.App/managedEnvironments/microservice-ref-framework-env
+  configuration:
+    ingress:
+      external: true
+      targetPort: 8000
+      allowInsecure: false
+  template:
+    containers:
+    - image: docker.io/michalmoudry/recognition-service:latest
+      name: recognition-service
+      env:
+        - name: DB_CONN
+          secretRef: 'azure-postgresql-connectionstring-19a1d'
+      resources:
+        cpu: 1.0
+        memory: 2Gi
+    - image: docker.io/michalmoudry/recognition-service-runner:latest
+      name: background-runner
+      env:
+        - name: DB_CONN
+          secretRef: 'db-conn-926cc'
+```
 
-#### Rozdělené systému na komponenty
+#### Rozdělení systému na komponenty
 V rámci projektu byly naimplementováno celkem 5 služeb, přičemž bylo použity celkem čtyři programovací jazyky (viz tabulka níže).
 
 | Název služby         | Programovací jazyk |
