@@ -1,6 +1,6 @@
 # Business případy pro mikroslužby
 ---
-Tato část obsahuje popisy produkčních systémů, které využívají architektonický styl mikroslužeb. Samotný popis vychází z realizovaných rozhovorů v rámci mé diplomové práci.
+Tato část obsahuje popisy produkčních systémů, které využívají architektonický styl mikroslužeb. Samotný popis vychází z realizovaných rozhovorů v rámci mé diplomové práci. Cílem této sekce je uvést realitu architektury mikroslužeb na reálných projektech. Problémem je, že u těchto projektů nelze sdílet ukázky zdrojového kódu (většinou se nejedná o open-source projekty).
 
 ## Business případ 1
 ### Doména

@@ -20,6 +20,8 @@ Je vlastnost, která spočívá v tom, že jednotlivé služby vlastní svoje da
 Výsledkem této charakteristiky je podpora polyglot prostředí, resp. heterogenních služeb, což označuje možnost naprogramovat jednotlivé služby v různých programovacích jazycích. Ukázku tohoto přístupu k implementaci služeb lze vidět v kapitole [Praktický projekt - Rozdělení systému na komponenty](/framework/on-hands-project?id=rozdělení-systému-na-komponenty).
 
 Na tomto obrázku lze vidět celkem tři služby a MQ komponentu, přičemž uživatelská služba publikuje událost do MQ, že byl smazán uživatel. K dané události jsou přihlášené ostatní služby, které při jejím obdržení smažou data spojená se smazaným uživatelem, resp. jeho účtem. Co dělá komunikaci zde asynchronní, tak je to skutečnost, že jednotlivé služby nikdy mezi sebou přímo nekomunikují, tedy na dotaz pro smazání uživatelských dat v systému uživatelská služba nikdy nečeká na odpověď od všech ostatních služeb. Ve výsledku vyvíjené systém pracují s konceptem eventuální konzistence.
+
+!> Zde lze pozorovat jeden z dopadů této architektury na vývoj SW, kdy zavedení asynchronní komunikace vede ke zvýšení komplexity testování. Tzn. v rámci manuálního nebo automatizovaného testování je třeba mít infrastrukturu a více než jednu běžící službu na realizace testovacích scénářů.
 ### Automatizace infrastruktury
 Zde pojem automatizace označuje aplikaci CD, což je jedna z praktik v rámci DevOps. Klíčovými prvky CD je automatizované testování (evaluace kvality přírůstků SW systému) a nasazování. Samozřejmě automatizace infrastruktury není unikátní pro architekturu mikroslužeb, ale u mikroslužeb jsou rozdílné aspekty v rámci provozu systému (distribuované trasování, monitorování nebo agregace logů).
 #### Ukázka automatizace

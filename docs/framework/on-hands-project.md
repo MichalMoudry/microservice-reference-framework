@@ -11,6 +11,29 @@ které neodkazují na konkrétní zdrojový kód.
 Co se týče funkcionality tohoto systému, tak jde o čtení obsahu na naskenovaných dokumentech a jejich archivace ve vhodném uložišti.
 
 Odkaz na webovou aplikaci: [Digi](https://mrf-web-app.vercel.app/)
+
+### Uživatelská dokumentace
+Celá uživatelská dokumentace je hostována zde: [Microservices Reference Framework - wiki](https://github.com/MichalMoudry/microservices-reference-framework/wiki "Přejít na wiki Rámce").
+#### User journey
+```mermaid
+journey
+    title Digi app - basic functionality
+    section Processing applications
+        Login: 7: Basic user
+        View processing apps: 7: Basic user
+        Create a processing app: 7: Basic user
+    section Create workflow
+        View processing app detail: 7: Basic user
+        Create new workflow: 7: Basic user
+    section Create document batch
+        View workflow detail: 7: Basic user
+        Navigate to batch create page: 7: Basic user
+        Fill the document batch form: 7: Basic user
+        Start document batch processing: 7: Basic user
+        Navigate back to workflow detail: 7: Basic user
+        View document batch detail: 7: Basic user
+```
+
 ### Implementace specifik mikroslužeb
 #### Nezávislost služeb
 Nezávislost služeb lze dosáhnout několika způsoby, kdy jedním z nich je využití asynchronní komunikace přes <abbr title="Message Queue">MQ</abbr> komponentu (třeba i za využití pub-sub patternu). Co se týče praktické ukázky této komunikace, tak ten je následující:
