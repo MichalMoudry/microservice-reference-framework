@@ -5,6 +5,10 @@
 
 Tedy systémy založené na architektuře mikroslužeb patří mezi typ distribuovaných systémů. Co se týče rozdílu nebo vztahu mezi mikroslužbami a <abbr title="Service Oriented Architecture">SOA</abbr>, tak mikroslužby jsou typem SOA, který jasně definuje způsob, jak mají být hranice služeb vymezovány.
 
+### Výhody a nevýhody architektury
+
+### Domény, kde se mikroslužby používají
+
 ## Referenční model mikroslužeb
 V této podkapitole je uveden referenční model architektury mikroslužeb. Tedy jde o obecný model komponent systému založených na dané architektuře.
 
