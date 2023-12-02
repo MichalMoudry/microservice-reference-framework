@@ -11,7 +11,7 @@ Tedy systémy založené na architektuře mikroslužeb patří mezi typ distribu
 |||
 |||
 |||
-|||
+|| Integrační testování je složitější, protože je třeba řešit více služeb a relevantní infrastrukturu (např. MQ nebo secret store)) |
 
 ### Domény, kde se mikroslužby používají
 - Bankovní sektor (fintech)
