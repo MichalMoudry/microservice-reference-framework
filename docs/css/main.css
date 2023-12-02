@@ -12,12 +12,8 @@ main {
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, strong, .sidebar-nav {
+h1, h2, h3, h4, strong, .sidebar-nav, thead, blockquote, .tip, .warn {
     font-family: 'Hubot Sans';
-}
-
-blockquote, .tip, .warn {
-    font-family: 'JetBrains Mono';
 }
 
 code {
@@ -26,10 +22,5 @@ code {
 
 .content p, li {
     font-size: 1rem;
-}
-
-@media screen and (min-width: 600px) {
-    .content p {
-        text-align: justify;
-    }
+    text-align: justify;
 }
