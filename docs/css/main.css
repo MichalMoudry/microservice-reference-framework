@@ -12,11 +12,11 @@ main {
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, strong {
+h1, h2, h3, h4, strong, .sidebar-nav {
     font-family: 'Hubot Sans';
 }
 
-.sidebar-nav, blockquote, .tip, .warn {
+blockquote, .tip, .warn {
     font-family: 'JetBrains Mono';
 }
 
