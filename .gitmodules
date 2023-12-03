@@ -1,3 +1,6 @@
 [submodule "src/recognition-service"]
 	path = src/recognition-service
 	url = https://github.com/MichalMoudry/mrf-recognition-service.git
+[submodule "src/analytics-service"]
+	path = src/analytics-service
+	url = https://github.com/MichalMoudry/mrf-analytics-service.git
