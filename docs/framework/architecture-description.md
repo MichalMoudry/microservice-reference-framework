@@ -5,6 +5,7 @@
 
 Tedy systémy založené na architektuře mikroslužeb patří mezi typ distribuovaných systémů. Co se týče rozdílu nebo vztahu mezi mikroslužbami a <abbr title="Service Oriented Architecture">SOA</abbr>, tak mikroslužby jsou typem SOA, který jasně definuje způsob, jak mají být hranice služeb vymezovány.
 
+<!--
 ### Výhody a nevýhody architektury
 | :heavy_check_mark: Výhody | :heavy_multiplication_x: Nevýhody |
 |---------------------------|-----------------------------------|
@@ -14,20 +15,23 @@ Tedy systémy založené na architektuře mikroslužeb patří mezi typ distribu
 | **Polyglot systém** <br/>= Vývojáři nejsou svázáni k jednomu programovacímu jazyku nebo databázové technologii. | Logování a trasování je důležitější a složitější |
 | Odolnost |  |
 | Snazší využití nových technologií |  |
+-->
 
+<!--
 ### Pojmy používané v rámci architektury mikroslužeb
 - Publisher
 - Subscriber
 - Bounded context
 - Domain
 - Event
+-->
 
 ### Domény, kde se mikroslužby používají
 - **Bankovní sektor** (fintech)
     - Příklad využití v této doméně lze vidět v sekci s business příkladem č. 1.
 - **Streamovací služby**
     - [Netflix](https://www.nginx.com/blog/microservices-at-netflix-architectural-best-practices/) je jedním z příkladů adopce mikroslužeb pro postavení stremovací služby, která dosahuje vysoké dostupnosti a odolnosti, včetně 
-- **...**
+- **A další**
     - Příkladem je zde třeba [Uber](https://www.uber.com/en-CZ/blog/microservice-architecture/), kde použili mikroslužby pro řešení problémů jako závislosti mezi vývojářskými týmy nebo růst komplexity systému.
 
 ## Referenční model mikroslužeb
@@ -48,4 +52,6 @@ V této podkapitole je uveden referenční model architektury mikroslužeb. Tedy
     - Samozřejmě publikované události mohou být mohou být přijímány více odběrateli, přičemž většinou je garantováno jedno doručení zprávy (závisí, jak je <abbr title="Message Queue">MQ</abbr> nakonfigurována).
     - Příkladem této komponenty jsou tyto: Azure Service Bus, AWS Simple Queue Service
 
+<!--
 ## Dokumentace architektury
+-->
