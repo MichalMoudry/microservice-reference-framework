@@ -13,7 +13,7 @@ Co se týče funkcionality tohoto systému, tak jde o čtení obsahu na naskenov
 Odkaz na webovou aplikaci: [Digi](https://mrf-web-app.vercel.app/)
 
 ### Uživatelská dokumentace
-Celá uživatelská dokumentace je hostována zde: [Microservices Reference Framework - wiki](https://github.com/MichalMoudry/microservices-reference-framework/wiki "Přejít na wiki Rámce").
+Celá uživatelská dokumentace je hostována zde: [Microservices Reference Framework - wiki](https://github.com/MichalMoudry/microservices-reference-framework/wiki/User-documentation "Přejít na wiki Rámce").
 #### User journey
 ```mermaid
 journey

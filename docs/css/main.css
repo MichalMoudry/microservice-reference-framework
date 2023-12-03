@@ -7,34 +7,20 @@
     font-stretch: 75% 125%;
 }
 
-/*main {
-    font-family: Lora, serif;
-    line-height: 1.6;
-}
-
-h1, h2, h3, h4, strong, code, .sidebar-nav {
-    font-family: 'Hubot Sans';
-}
-
-blockquote p, .tip {
-    font-family: 'Hubot Sans';
-}*/
-
 main {
     font-family: Lora, serif;
     line-height: 1.6;
 }
 
-h1, h2, h3, h4, strong, code, .sidebar-nav {
+h1, h2, h3, h4, strong, .sidebar-nav, thead, blockquote, .tip, .warn {
     font-family: 'Hubot Sans';
+}
+
+code {
+    font-family: 'JetBrains Mono' !important;
 }
 
 .content p, li {
     font-size: 1rem;
-}
-
-@media screen and (min-width: 600px) {
-    .content p {
-        text-align: justify;
-    }
+    text-align: justify;
 }
