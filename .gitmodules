@@ -1,0 +1,15 @@
+[submodule "src/recognition-service"]
+	path = src/recognition-service
+	url = https://github.com/MichalMoudry/mrf-recognition-service.git
+[submodule "src/analytics-service"]
+	path = src/analytics-service
+	url = https://github.com/MichalMoudry/mrf-analytics-service.git
+[submodule "src/workflow-service"]
+	path = src/workflow-service
+	url = https://github.com/MichalMoudry/mrf-workflow-service.git
+[submodule "src/notifications-service"]
+	path = src/notifications-service
+	url = https://github.com/MichalMoudry/mrf-notifications-service.git
+[submodule "src/user-service"]
+	path = src/user-service
+	url = https://github.com/MichalMoudry/mrf-user-service.git
