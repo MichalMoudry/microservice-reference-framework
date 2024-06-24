@@ -1,6 +1,11 @@
 # Microservices Reference Framework
 Tato stránka obsahuje referenční rámec pro architektonický styl mikroslužeb. S touto stránkou, resp. uložištěm jsou spojeny další repositáře pro jednotlivé mikroslužby (součástí praktické ukázky). Pro začátek s tímto _Rámcem_ navštivte kapitoly [Úvod](./framework/introduction "Odkaz na stránku s úvodem") a [Návod](./framework/guide "Odkaz na stránku s návodem")
 
+## Verze
+| Verze | Datum      | Změny |
+|-------|------------|-------|
+| 1.0   | 24.06.2024 | Dokončení první verze rámce. Tzn. přidání verzí + odkazu na diplomovou práci |
+
 ## Struktura Rámce
 1. [Úvod](./framework/introduction "Link to introduction")
     - Motivace
