@@ -14,7 +14,7 @@ Také SW architektura je doménou, kde se člověk, resp. architekt musí neust�
 
 V rámci mé diplomové práce jsem se snažil vymezit současný stav v oblasti výuky SW architektur, kdy byly analyzované dokumenty ze středních průmyslových škol a bootcampů, které se zabývaly výukou softwarových architektur. Dále také byly analyzované open-source projekty zabývající se mikroslužbami a jejich charakteristikami.
 
-!> Moje diplomová práce bude publikována později, proto odkaz na ni bude uveden až po datu její publikace.
+!> Odkaz na diplomovou práci je následující: [VŠE - VŠKP](https://vskp.vse.cz/91457_ramec-pro-podporu-vyuky-mikrosluzeb?author=Moudrý&type=Diplomová+práce&page=1 "Rámec pro podporu výuky mikroslužeb").
 
 Jedním z možných důvodů pro menší zájem o výuku je, že juniorní členové vývojářských týmu  se většinou nebudou podílet na SW architektuře na projektech, tedy nebude mít cenu věnovat se danému tématu v rámci výuky. Ovšem dle knihy (Richards a Ford 2020) je komunikace aspektů architektonických rozhodnutí na projektu důležitá, kdy možným problémem je, že architekt nebude brát poznámky nebo obavy v úvahu . Tedy většina diskuse v týmu bude vedena zkušenými členy týmu a juniorní členové nemusí být její součástí, protože nemusí mít znalosti ohledně projektu a SW architektury, aby k diskusi přispěli, což bude mít negativní dopad na onboarding juniorů na projekty.
 
